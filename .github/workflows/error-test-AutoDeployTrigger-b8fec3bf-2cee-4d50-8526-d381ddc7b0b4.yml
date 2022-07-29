@@ -55,7 +55,7 @@ jobs:
         uses: t-amberwang/smartdeploy@0.2.0
         with:
           appName: error-test
-          resourceGroup: error-test
+          resourceGroup: amber-test-container
           imageID: ambertest.azurecr.io/testapp:${{ github.sha }}
           revisionSuffix: ${{ github.sha }}
           logAnalyticsWorkspace: amber-test-app-logs
