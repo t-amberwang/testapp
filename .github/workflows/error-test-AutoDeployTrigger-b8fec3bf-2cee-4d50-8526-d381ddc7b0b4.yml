@@ -12,7 +12,8 @@ on:
 
   # Allow mannually trigger 
   workflow_dispatch:      
-
+env:
+  REV_SUFFIX: testapp01 #normally ${{ github.sha }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -57,7 +58,7 @@ jobs:
           appName: error-test
           resourceGroup: amber-test-container
           imageID: ambertest.azurecr.io/testapp:${{ github.sha }}
-          revisionSuffix: ${{ github.sha }}
+          revisionSuffix: $REV_SUFFIX
           logAnalyticsWorkspace: amber-test-app-logs
           stepPct: 25
           stepTime: 5
