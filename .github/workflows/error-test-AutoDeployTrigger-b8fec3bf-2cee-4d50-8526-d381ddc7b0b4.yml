@@ -17,7 +17,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    if: "!contains(github.event.head_commit.message, 'DNR')"
     steps:
       - name: Checkout to the branch
         uses: actions/checkout@v2
