@@ -13,7 +13,7 @@ on:
   # Allow mannually trigger 
   workflow_dispatch:      
 env:
-  REV_SUFFIX: testapp011 #normally ${{ github.sha }}
+  REV_SUFFIX: testapp10 #normally ${{ github.sha }}
 jobs:
   build:
     runs-on: ubuntu-latest
