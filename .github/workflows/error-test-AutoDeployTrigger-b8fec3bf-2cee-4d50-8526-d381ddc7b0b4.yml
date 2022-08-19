@@ -13,7 +13,7 @@ on:
   # Allow mannually trigger 
   workflow_dispatch:      
 env:
-  REV_SUFFIX: testapp10 #normally ${{ github.sha }}
+  REV_SUFFIX: ${{ github.sha }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -52,8 +52,8 @@ jobs:
           creds: ${{ secrets.ERRORTEST_AZURE_CREDENTIALS }}
 
 
-      - name: Deploy gradually to containerapp with confidence ;)
-        uses: t-amberwang/smartdeploy@0.2.2
+      - name: Azure SmartDeploy
+        uses: t-amberwang/smartdeploy@0.3.1
         with:
           appName: error-test
           resourceGroup: amber-test-container
